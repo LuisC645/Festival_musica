@@ -1,0 +1,67 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.boletos{
+    padding:5rem 0;
+    h3{
+        text-align: center;
+        color:v.$blanco;
+        margin-bottom:2rem;
+    }
+
+    .contenedor-boletos{
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+    }
+}
+
+.pase{
+    //ya que es el mismo nombre de la clase padre y las demas se le puede
+    //colocar un & y se asigna el nombre de la clase padre y despues lo siguiente
+
+    &-header, &-footer{
+        p{
+            color:v.$blanco;
+            text-transform: uppercase;
+            text-align: center;
+            padding:1rem;
+            margin:0;
+        }
+    }
+
+    &-header{
+        background-color:v.$rosa;
+        p{
+            font-size:1.5rem;
+        }
+    }
+    &-body{
+        background-color:v.$blanco;
+
+        ul{
+            @include m.resetear-lista;
+            li, :nth-child(odd){
+                background-color:v.$blanco;
+                padding:1rem;
+                border-bottom: 1px solid #e1e1e1 ;
+            }
+        }
+    }
+        
+    .pase-footer{
+        background-color:v.$morado;
+        p{
+            font-size:2.4rem;
+            font-weight:700;
+        }
+    }
+}
+
+.nombre-pase{
+    text-align:center;
+    color:v.$blanco;
+    font-size:2.5rem;
+    font-weight:700;
+    margin:1rem 0;
+}

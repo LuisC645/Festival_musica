@@ -1,0 +1,17 @@
+//import es la sintaxis antigua de scss
+// @import 'base/variables';
+// @import 'contenido/contenido';
+
+//la forma nueva es con use y fordward
+//se necesita en cada carpeta a utilizar un index
+//se llama la carpeta con use y en el index se llama con fordward al archivo en especifico
+
+@use 'base';
+@use 'layout';
+
+
+// body{
+//     background-color: $rojo;
+// }
+
+//se pueden definir variables donde uno quiera y se usan como las inicio sin necesidad de var()
